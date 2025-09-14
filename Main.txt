@@ -1,6 +1,7 @@
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
 local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
@@ -67,8 +68,8 @@ ScreenGui.ResetOnSpawn = false
 
 -- Painel (começa invisível)
 local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 220, 0, 200)
-MainFrame.Position = UDim2.new(0.5, -110, 0.5, -100)
+MainFrame.Size = UDim2.new(0, 220, 0, 250)
+MainFrame.Position = UDim2.new(0.5, -110, 0.5, -125)
 MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 MainFrame.BorderSizePixel = 0
 MainFrame.Visible = false
@@ -87,18 +88,18 @@ local Title = Instance.new("TextLabel")
 Title.Size = UDim2.new(1, 0, 0, 30)
 Title.BackgroundTransparency = 1
 Title.Text = "Painel Moderno"
-Title.TextColor3 = Color3.fromRGB(0, 255, 0)
+Title.TextColor3 = Color3.fromRGB(0, 0, 0) -- preto
 Title.Font = Enum.Font.GothamBold
 Title.TextSize = 16
 Title.Parent = MainFrame
 
--- Botão XRL8 (azul)
+-- Botão XRL8
 local Xrl8Button = Instance.new("TextButton")
 Xrl8Button.Size = UDim2.new(0, 180, 0, 40)
 Xrl8Button.Position = UDim2.new(0.5, -90, 0, 50)
 Xrl8Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Xrl8Button.Text = "xrl8"
-Xrl8Button.TextColor3 = Color3.fromRGB(0, 170, 255) -- azul
+Xrl8Button.TextColor3 = Color3.fromRGB(0, 0, 0) -- preto
 Xrl8Button.Font = Enum.Font.GothamBold
 Xrl8Button.TextSize = 16
 Xrl8Button.Parent = MainFrame
@@ -113,19 +114,17 @@ BtnStroke2.Thickness = 2
 BtnStroke2.Parent = Xrl8Button
 
 Xrl8Button.MouseButton1Click:Connect(function()
-    -- Executa o script
     loadstring(game:HttpGet("https://raw.githubusercontent.com/267266273ffsfs/xrl8/refs/heads/main/Main.txt"))()
-    -- Equipa o item de novo
     equipItem(itemID)
 end)
 
--- Botão Omnitrix (verde)
+-- Botão Omnitrix
 local OmnitrixButton = Instance.new("TextButton")
 OmnitrixButton.Size = UDim2.new(0, 180, 0, 40)
 OmnitrixButton.Position = UDim2.new(0.5, -90, 0, 100)
 OmnitrixButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 OmnitrixButton.Text = "Equipar Omnitrix"
-OmnitrixButton.TextColor3 = Color3.fromRGB(0, 255, 0)
+OmnitrixButton.TextColor3 = Color3.fromRGB(0, 0, 0) -- preto
 OmnitrixButton.Font = Enum.Font.GothamBold
 OmnitrixButton.TextSize = 16
 OmnitrixButton.Parent = MainFrame
@@ -141,6 +140,32 @@ BtnStroke3.Parent = OmnitrixButton
 
 OmnitrixButton.MouseButton1Click:Connect(function()
     equipItem(itemID)
+end)
+
+-- Botão Roupa Ben 10
+local Ben10Button = Instance.new("TextButton")
+Ben10Button.Size = UDim2.new(0, 180, 0, 40)
+Ben10Button.Position = UDim2.new(0.5, -90, 0, 150)
+Ben10Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Ben10Button.Text = "Equipar Roupa Ben 10"
+Ben10Button.TextColor3 = Color3.fromRGB(0, 0, 0) -- preto
+Ben10Button.Font = Enum.Font.GothamBold
+Ben10Button.TextSize = 16
+Ben10Button.Parent = MainFrame
+
+local BtnCorner4 = Instance.new("UICorner")
+BtnCorner4.CornerRadius = UDim.new(0, 10)
+BtnCorner4.Parent = Ben10Button
+
+local BtnStroke4 = Instance.new("UIStroke")
+BtnStroke4.Color = Color3.fromRGB(0, 255, 0)
+BtnStroke4.Thickness = 2
+BtnStroke4.Parent = Ben10Button
+
+Ben10Button.MouseButton1Click:Connect(function()
+    equipItem(6359157561)
+    equipItem(13768055529)
+    equipItem(1838493190)
 end)
 
 -- Botão de abrir/fechar
