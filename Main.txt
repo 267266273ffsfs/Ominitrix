@@ -68,8 +68,8 @@ ScreenGui.ResetOnSpawn = false
 
 -- Painel (começa invisível)
 local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 220, 0, 250)
-MainFrame.Position = UDim2.new(0.5, -110, 0.5, -125)
+MainFrame.Size = UDim2.new(0, 220, 0, 290) -- altura aumentada
+MainFrame.Position = UDim2.new(0.5, -110, 0.5, -145)
 MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 MainFrame.BorderSizePixel = 0
 MainFrame.Visible = false
@@ -165,7 +165,31 @@ BtnStroke4.Parent = Ben10Button
 Ben10Button.MouseButton1Click:Connect(function()
     equipItem(6359157561)
     equipItem(13768055529)
-    equipItem(1838493190)
+    equipItem(1243247609)
+end)
+
+-- Botão Ultra T
+local UltraTButton = Instance.new("TextButton")
+UltraTButton.Size = UDim2.new(0, 180, 0, 40)
+UltraTButton.Position = UDim2.new(0.5, -90, 0, 200)
+UltraTButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+UltraTButton.Text = "Ultra T"
+UltraTButton.TextColor3 = Color3.fromRGB(0, 0, 0) -- preto
+UltraTButton.Font = Enum.Font.GothamBold
+UltraTButton.TextSize = 16
+UltraTButton.Parent = MainFrame
+
+local BtnCorner5 = Instance.new("UICorner")
+BtnCorner5.CornerRadius = UDim.new(0, 10)
+BtnCorner5.Parent = UltraTButton
+
+local BtnStroke5 = Instance.new("UIStroke")
+BtnStroke5.Color = Color3.fromRGB(0, 255, 0)
+BtnStroke5.Thickness = 2
+BtnStroke5.Parent = UltraTButton
+
+UltraTButton.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/267266273ffsfs/ultra-t/refs/heads/main/Main.txt"))()
 end)
 
 -- Botão de abrir/fechar
